@@ -32,7 +32,7 @@ function getItemDataString()
         end
         return string
     else
-        for k,v in pairs(me.getItemsInNetwork()) do
+        for k,v in pairs(mePort.getItemsInNetwork()) do
             if type(v) == 'table' then
                 string = string .. v['label'] .. "~" .. v["size"] .. "~".. tostring(v["isCraftable"])..";"
             end
