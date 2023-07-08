@@ -23,7 +23,7 @@ end
 -- https://github.com/PoroCoco/myaenetwork/blob/main/webAux.lua
 function getItemDataString()
     local string = ""
-    local isModpackGTNH, storedItems = pcall(me.allItems) --tries the allItems method only available on the GTNH modpack. 
+    local isModpackGTNH, storedItems = pcall(mePort.allItems) --tries the allItems method only available on the GTNH modpack. 
     if isModpackGTNH then
         for item in storedItems do
             if type(item) == 'table' then
