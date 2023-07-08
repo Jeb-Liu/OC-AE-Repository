@@ -40,5 +40,14 @@ function getItemDataString()
         return string
     end
 end
-print(getItemDataString())
+-- print(getItemDataString())
+
+local filePath = "/home/http.txt"
+local file = io.open(filePath, "w")
+if file then
+    file:write(getItemDataString())
+    file:close()
+    print("file saved!")
+else
+    print("can not open file!")
 
