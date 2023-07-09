@@ -55,7 +55,7 @@ while true do
     local itemData = getItemDataString()
     
     -- 发送HTTP POST请求
-    local response = internet.request(url, {data = itemData}, POST)
+    local response = internet.request(url, {data = itemData})
     
     -- 读取响应内容
     print("HTTP response: " .. response)
