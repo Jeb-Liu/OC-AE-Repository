@@ -65,6 +65,6 @@ while true do
     end
     print("HTTP响应: " .. responseData)
     
-    computer.sleep(1)
+    os.sleep(1)
 end
 
