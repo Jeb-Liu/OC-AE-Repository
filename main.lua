@@ -53,7 +53,7 @@ local url = "http://homo.mc.yjjkds.link/add_log/"
 while true do
     -- 构建HTTP请求体
     local data = getItemDataString()
-    local requestBody = "data=" .. data
+    local requestBody = "log_data=" .. data
     
     -- 发送HTTP POST请求
     local response = internet.request(url, requestBody)
