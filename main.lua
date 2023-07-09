@@ -42,12 +42,27 @@ function getItemDataString()
 end
 -- print(getItemDataString())
 
-local filePath = "/home/http.txt"
-local file = io.open(filePath, "w")
-if file then
-    file:write(getItemDataString())
-    file:close()
-    print("file saved!")
-else
-    print("can not open file!")
+
+-- HTTP POST ---------------------------------------------------------------------------------------------------
+local component = require("component")
+local internet = component.internet
+
+-- 指定目标URL和要发送的字符串数据
+local url = "http://homo.mc.yjjkds.link/add_log/"
+local data = getItemDataString()
+
+-- 构建HTTP请求体
+local requestBody = "data=" .. data
+
+-- 发送HTTP POST请求
+local response = internet.request(url, requestBody)
+
+-- 读取响应内容
+local responseData = ""
+for chunk in response do
+  responseData = responseData .. chunk
 end
+
+-- 打印响应结果
+print("HTTP响应: " .. responseData)
+
