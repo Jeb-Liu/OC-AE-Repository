@@ -53,18 +53,13 @@ local url = "http://homo.mc.yjjkds.link/add_log/"
 while true do
     -- 构建HTTP请求体
     local data = getItemDataString()
-    local requestBody = "log_data=" .. data
     
     -- 发送HTTP POST请求
-    local response = internet.request(url, requestBody)
+    local response = internet.request(url, data=data)
     
     -- 读取响应内容
-    local responseData = ""
-    for chunk in response do
-      responseData = responseData .. chunk
-    end
-    print("HTTP响应: " .. responseData)
+    print("HTTP响应: " .. response)
     
-    os.sleep(1)
+    os.sleep(10)
 end
 
