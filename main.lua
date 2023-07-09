@@ -52,14 +52,14 @@ local url = "http://homo.mc.yjjkds.link/add_log"
 
 while true do
     -- 构建HTTP请求体
-    local data = getItemDataString()
+    local itemData = getItemDataString()
     
     -- 发送HTTP POST请求
-    local response = internet.request(url, data=data)
+    local response = internet.request(url, {data = itemData})
     
     -- 读取响应内容
-    print("HTTP响应: " .. response)
-    
+    print("HTTP response: " .. response)
+    print("Free memory: " .. computer.freeMemory() .. " bytes")
     os.sleep(10)
 end
 
