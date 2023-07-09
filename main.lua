@@ -48,7 +48,7 @@ local component = require("component")
 local internet = component.internet
 
 -- 指定目标URL
-local url = "http://homo.mc.yjjkds.link/add_log/"
+local url = "http://homo.mc.yjjkds.link/add_log"
 
 while true do
     -- 构建HTTP请求体
